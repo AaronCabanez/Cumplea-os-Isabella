@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños, Isabella</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* ===== PANTALLA 1 ===== */
+        .screen1 {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 25%, #DDA0DD 50%, #EDD5F1 75%, #FFF0F5 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title {
+            font-size: 4rem;
+            color: #C24B8E;
+            text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.5);
+            margin-bottom: 40px;
+            font-weight: bold;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cake-container {
+            position: relative;
+            width: 250px;
+            height: 400px;
+            margin: 20px;
+        }
+
+        /* Capas de pastel */
+        .cake-layer {
+            position: absolute;
+            width: 250px;
+            height: 80px;
+            left: 0;
+            opacity: 0;
+        }
+
+        .layer1 {
+            background: #8B6F47;
+            border-radius: 5px;
+            animation: dropCake1 1.5s ease-out 0.5s forwards;
+        }
+
+        .layer2 {
+            background: #C77DCC;
+            border-radius: 5px;
+            animation: dropCake2 1.5s ease-out 2s forwards;
+        }
+
+        .layer3 {
+            background: #D2B48C;
+            border-radius: 5px;
+            animation: dropCake3 1.5s ease-out 3.5s forwards;
+        }
+
+        .layer4 {
+            background: #F8BBD0;
+            border-radius: 5px;
+            animation: dropCake4 1.5s ease-out 5s forwards;
+        }
+
+        .layer5 {
+            background: #F5E6D3;
+            border-radius: 5px;
+            animation: dropCake5 1.5s ease-out 6.5s forwards;
+        }
+
+        @keyframes dropCake1 {
+            from {
+                transform: translateY(-400px);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropCake2 {
+            from {
+                transform: translateY(-300px);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(80px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropCake3 {
+            from {
+                transform: translateY(-200px);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(160px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropCake4 {
+            from {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(240px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropCake5 {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(320px);
+                opacity: 1;
+            }
+        }
+
+        /* Hello Kitty animada */
+        .hello-kitty {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: -100px;
+            left: 95px;
+            animation: fallKitty 2s ease-out 8s forwards;
+            z-index: 10;
+        }
+
+        @keyframes fallKitty {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(450px) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .kitty-body {
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 0 3px #000;
+        }
+
+        .kitty-ear {
+            position: absolute;
+            width: 20px;
+            height: 25px;
+            background: #000;
+            top: -5px;
+        }
+
+        .kitty-ear.left {
+            left: 10px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .kitty-ear.right {
+            right: 10px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .kitty-bow {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            background: #FF69B4;
+            top: 15px;
+            right: -10px;
+            border-radius: 50%;
+        }
+
+        .kitty-eye {
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            top: 25px;
+        }
+
+        .kitty-eye.left {
+            left: 18px;
+            animation: blink 0.8s infinite 8.5s;
+        }
+
+        .kitty-eye.right {
+            right: 18px;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 3px;
+            }
+        }
+
+        .kitty-nose {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FF69B4;
+            border-radius: 50%;
+            top: 35px;
+            left: 27px;
+        }
+
+        .gift-container {
+            position: absolute;
+            bottom: 30px;
+            animation: popIn 1s ease-out 10.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .gift {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #00AA00 25%, transparent 25%, transparent 75%, #00AA00 75%, #00AA00),
+                        linear-gradient(45deg, #00AA00 25%, transparent 25%, transparent 75%, #00AA00 75%, #00AA00);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-color: #00DD00;
+            border: 3px solid #FF0000;
+            border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gift:hover {
+            transform: scale(1.05);
+        }
+
+        .gift-bow {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #FF0000;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+
+        .gift-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #C24B8E;
+            font-weight: bold;
+        }
+
+        /* ===== PANTALLA 2 ===== */
+        .screen2 {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 25%, #DDA0DD 50%, #EDD5F1 75%, #FFF0F5 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        .screen2.active {
+            display: flex;
+        }
+
+        /* Pétalos cayendo */
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FFB6C1;
+            border-radius: 50%;
+            animation: fallPetal 3s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes fallPetal {
+            from {
+                top: -30px;
+                opacity: 1;
+            }
+            to {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(200, 75, 142, 0.3);
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-box h2 {
+            color: #C24B8E;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .message-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .birthday-triangles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            animation: fadeInDown 1s ease-out 3s forwards;
+            opacity: 0;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid #FFB6C1;
+            animation: sway 2s ease-in-out infinite;
+        }
+
+        .triangle:nth-child(2) {
+            border-bottom-color: #DDA0DD;
+        }
+
+        .triangle:nth-child(3) {
+            border-bottom-color: #F8BBD0;
+        }
+
+        @keyframes sway {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .next-button {
+            background: #C24B8E;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 4s forwards;
+            opacity: 0;
+        }
+
+        .next-button:hover {
+            background: #A83B6F;
+            transform: scale(1.05);
+        }
+
+        /* ===== PANTALLA 3 ===== */
+        .screen3 {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 25%, #DDA0DD 50%, #EDD5F1 75%, #FFF0F5 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen3.active {
+            display: flex;
+        }
+
+        .family-scene {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 40px;
+        }
+
+        .table {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 150px;
+            background: #8B6F47;
+            border-radius: 10px;
+            z-index: 5;
+        }
+
+        .family-member {
+            position: absolute;
+            bottom: 150px;
+            width: 60px;
+            height: 80px;
+        }
+
+        .sister {
+            left: 200px;
+            animation: standUp 2s ease-out forwards;
+        }
+
+        @keyframes standUp {
+            from {
+                transform: translateY(40px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .sister-head {
+            width: 40px;
+            height: 40px;
+            background: #F4A460;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .sister-hair {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            background: #D2691E;
+            top: -5px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .sister-body {
+            width: 30px;
+            height: 30px;
+            background: #FF69B4;
+            margin: 5px auto;
+            border-radius: 5px;
+        }
+
+        .candle {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 310px;
+            width: 8px;
+            height: 40px;
+            background: #FFA500;
+            border-radius: 4px;
+            animation: glow 1s ease-in-out 4s infinite;
+        }
+
+        .candle-flame {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 20px;
+            background: #FFD700;
+            border-radius: 50% 50% 50% 0;
+            animation: flickerFlame 0.5s ease-in-out infinite 4.5s;
+        }
+
+        @keyframes flickerFlame {
+            0%, 100% {
+                height: 20px;
+                background: #FFD700;
+            }
+            50% {
+                height: 25px;
+                background: #FF8C00;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: none;
+            }
+            50% {
+                box-shadow: 0 0 20px #FFD700;
+            }
+        }
+
+        .mother {
+            left: 350px;
+            animation: lightCandle 1s ease-out 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes lightCandle {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mother-head {
+            width: 40px;
+            height: 40px;
+            background: #F4A460;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mother-hair {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            background: #8B4513;
+            top: -10px;
+            border-radius: 50%;
+        }
+
+        .mother-body {
+            width: 30px;
+            height: 30px;
+            background: #4169E1;
+            margin: 5px auto;
+            border-radius: 5px;
+        }
+
+        .dialogue-box {
+            position: absolute;
+            bottom: -150px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: showDialogue 1s ease-out 5.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes showDialogue {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .dialogue-box p {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .wishes-section {
+            position: absolute;
+            bottom: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 8.5s forwards;
+            opacity: 0;
+        }
+
+        .wishes-section h3 {
+            color: #C24B8E;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .wishes-section p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PANTALLA 4 (FINAL) ===== */
+        .screen4 {
+            width: 100vw;
+            height: 100vh;
+            background: repeating-linear-gradient(
+                45deg,
+                #00BB00,
+                #00BB00 10px,
+                #FF0000 10px,
+                #FF0000 20px
+            );
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen4.active {
+            display: flex;
+        }
+
+        .final-message-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            animation: popIn 0.6s ease-out forwards;
+        }
+
+        .final-message-box h2 {
+            color: #C24B8E;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .final-message-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .kitty-final {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 30px auto;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .kitty-final .kitty-body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .high-five-text {
+            font-size: 1.3rem;
+            color: #C24B8E;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .hand {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #F4A460;
+            border-radius: 50%;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+            animation: waveHand 1s ease-in-out infinite;
+        }
+
+        @keyframes waveHand {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+        }
+
+        .applause-effect {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FFD700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: flyAway 1s ease-out forwards;
+        }
+
+        @keyframes flyAway {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+
+        .end-button {
+            background: #C24B8E;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .end-button:hover {
+            background: #A83B6F;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PANTALLA 1: TORTA ANIMADA -->
+    <div class="screen1" id="screen1">
+        <h1 class="title">¡Feliz Cumpleaños, Isabella! 🎉</h1>
+        
+        <div class="cake-container">
+            <div class="cake-layer layer1"></div>
+            <div class="cake-layer layer2"></div>
+            <div class="cake-layer layer3"></div>
+            <div class="cake-layer layer4"></div>
+            <div class="cake-layer layer5"></div>
+
+            <!-- Hello Kitty cayendo -->
+            <div class="hello-kitty">
+                <div class="kitty-body">
+                    <div class="kitty-ear left"></div>
+                    <div class="kitty-ear right"></div>
+                    <div class="kitty-bow"></div>
+                    <div class="kitty-eye left"></div>
+                    <div class="kitty-eye right"></div>
+                    <div class="kitty-nose"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regalo para clickear -->
+        <div class="gift-container">
+            <div class="gift" id="gift" onclick="nextScreen()">
+                <div class="gift-bow"></div>
+            </div>
+            <div class="gift-text">¡Toca aquí!</div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: MENSAJE PERSONAL -->
+    <div class="screen2" id="screen2">
+        <div class="birthday-triangles">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+        </div>
+
+        <div class="message-box">
+            <h2>Isabella, mi hermana adorada</h2>
+            <p>Te quiero desear un muy feliz cumpleaños y espero que valores este día especial.</p>
+            
+            <p>Isa, honestamente, yo soy tu hermano y quiero decirte que <strong>te quiero mucho</strong>, que aprecio lo que sos y cómo sos.</p>
+            
+            <p>Gracias, Isa, por estar en mis mejores y peores momentos. Sé que aunque nos peleemos y tengamos nuestras diferencias, nos queremos el uno al otro.</p>
+            
+            <p>Te quiero, Isa, y ya cumpliste 13 años. <strong>¡Felicidades!</strong> Espero que disfrutes demasiado esta etapa de secundaria.</p>
+            
+            <p>Créeme que vos sos la persona más social que he conocido. Sin vos no sería tan extrovertido, no tendría a mis amigos y no sabría los consejos sociales que tengo ahora.</p>
+            
+            <p><strong>Gracias, porque fuiste una parte muy importante en mi vida.</strong> Le doy gracias a Dios por tener una hermana menor como vos.</p>
+            
+            <p>Hice esta carta en estilo digital para demostrarte cuánto te quiero y cuánto he aprendido de programación. Quería que valoraras este detalle.</p>
+            
+            <p><strong>Te valoro y te quiero, Isabela. 💕</strong></p>
+        </div>
+
+        <button class="next-button" onclick="toScreen3()">Siguiente →</button>
+    </div>
+
+    <!-- PANTALLA 3: ESCENA FAMILIAR -->
+    <div class="screen3" id="screen3">
+        <div class="family-scene">
+            <div class="table"></div>
+            
+            <!-- Hermana sorprendida -->
+            <div class="family-member sister">
+                <div class="sister-head">
+                    <div class="sister-hair"></div>
+                </div>
+                <div class="sister-body"></div>
+            </div>
+
+            <!-- Torta -->
+            <div style="position: absolute; bottom: 150px; left: 50%; transform: translateX(-50%); z-index: 10;">
+                <div style="width: 80px; height: 100px; background: linear-gradient(to right, #8B6F47 0%, #D2B48C 100%); margin: 0 auto; border-radius: 5px;"></div>
+                <div class="candle">
+                    <div class="candle-flame"></div>
+                </div>
+            </div>
+
+            <!-- Madre encendiendo la vela -->
+            <div class="family-member mother">
+                <div class="mother-head">
+                    <div class="mother-hair"></div>
+                </div>
+                <div class="mother-body"></div>
+            </div>
+
+            <!-- Diálogo de Isabella -->
+            <div class="dialogue-box">
+                <p>¡Qué hermoso día! Aprecio a mi familia y lo que han hecho por mí. Espero que este año sea el mejor de todos.</p>
+                <p>Gracias Dios por acompañarme. Los valoro mucho. 💕</p>
+            </div>
+        </div>
+
+        <!-- Sección de deseos -->
+        <div class="wishes-section">
+            <h3>Un deseo especial</h3>
+            <p>En este momento mágico de tu cumpleaños, deseo que cada día de los próximos años esté lleno de amor, alegría y momentos memorables junto a quienes te queremos.</p>
+        </div>
+
+        <button class="next-button" onclick="toScreen4()" style="animation: fadeInUp 1s ease-out 10s forwards;">Finalizar →</button>
+    </div>
+
+    <!-- PANTALLA 4: DESPEDIDA -->
+    <div class="screen4" id="screen4">
+        <div class="final-message-box">
+            <h2>¡Gracias, Isa! 💚</h2>
+            <p>Gracias por leer esta carta y por estar en mi vida.</p>
+            <p><strong>Te quiero mucho y espero que hayas disfrutado esta tarjeta hecha a mi estilo.</strong></p>
+            <p>Quería demostrarte con este pequeño proyecto cuánto significa tu cumpleaños para mí.</p>
+
+            <div class="kitty-final">
+                <div class="kitty-body">
+                    <div class="kitty-ear left"></div>
+                    <div class="kitty-ear right"></div>
+                    <div class="kitty-bow"></div>
+                    <div class="kitty-eye left"></div>
+                    <div class="kitty-eye right"></div>
+                    <div class="kitty-nose"></div>
+                </div>
+                <div class="hand" id="hand"></div>
+            </div>
+
+            <div class="high-five-text" id="highFiveText">¡Chócame los cinco! ��</div>
+        </div>
+
+        <button class="end-button" onclick="finishCard()">Fin 🎊</button>
+    </div>
+
+    <script>
+        // Crear pétalos cayendo en Pantalla 2
+        function createPetals() {
+            const screen2 = document.getElementById('screen2');
+            for (let i = 0; i < 30; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDelay = i * 0.1 + 's';
+                petal.style.background = ['#FFB6C1', '#DDA0DD', '#F8BBD0'][Math.floor(Math.random() * 3)];
+                screen2.appendChild(petal);
+            }
+        }
+
+        // Navegar a pantalla 2
+        function nextScreen() {
+            document.getElementById('screen1').style.display = 'none';
+            document.getElementById('screen2').classList.add('active');
+            createPetals();
+        }
+
+        // Navegar a pantalla 3
+        function toScreen3() {
+            document.getElementById('screen2').classList.remove('active');
+            document.getElementById('screen3').classList.add('active');
+        }
+
+        // Navegar a pantalla 4
+        function toScreen4() {
+            document.getElementById('screen3').classList.remove('active');
+            document.getElementById('screen4').classList.add('active');
+        }
+
+        // Ch��came los cinco - Interacción
+        document.addEventListener('DOMContentLoaded', function() {
+            const hand = document.getElementById('hand');
+            const highFiveText = document.getElementById('highFiveText');
+
+            hand.addEventListener('click', function() {
+                // Crear efecto de aplauso
+                for (let i = 0; i < 10; i++) {
+                    const spark = document.createElement('div');
+                    spark.className = 'applause-effect';
+                    spark.style.left = hand.offsetLeft + Math.random() * 40 + 'px';
+                    spark.style.top = hand.offsetTop + Math.random() * 40 + 'px';
+                    document.getElementById('screen4').appendChild(spark);
+                }
+
+                // Animar mano
+                hand.style.animation = 'none';
+                setTimeout(() => {
+                    hand.style.animation = 'waveHand 0.3s ease-in-out';
+                }, 10);
+
+                // Mostrar mensaje
+                highFiveText.textContent = '¡Gracias! 💕';
+                setTimeout(() => {
+                    highFiveText.textContent = '¡Chócame los cinco! ✋';
+                }, 2000);
+            });
+        });
+
+        // Finalizar tarjeta
+        function finishCard() {
+            alert('¡Feliz Cumpleaños, Isabella! 🎉💕');
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>
